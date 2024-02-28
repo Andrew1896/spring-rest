@@ -51,8 +51,24 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.16.1</version>
         </dependency>
-    </dependencies>
-    <build>
-        <finalName>spring_course_rest</finalName>
-    </build>
-</project>
+        </dependencies>
+<build>
+<finalName>spring_course_rest</finalName>
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+        </configuration>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.2</version>
+    </plugin>
+</plugins>
+</build>
+        </project>
