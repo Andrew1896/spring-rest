@@ -1,14 +1,10 @@
 package com.zaurtregulov.spring.rest.controller;
 
 import com.zaurtregulov.spring.rest.entity.Employee;
-import com.zaurtregulov.spring.rest.exception_handing.EmployeeIncorrectData;
 import com.zaurtregulov.spring.rest.exception_handing.NoSuchEmployeeException;
 import com.zaurtregulov.spring.rest.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -37,6 +33,12 @@ public class MyRESTController {
 
     @PostMapping("/employees")
     public Employee addNewEmployee (@RequestBody Employee employee) {
+        employeeService.saveEmployee(employee);
+        return employee;
+    }
+
+        @PutMapping("/employees")
+    public Employee updateEmployee (@RequestBody Employee employee) {
         employeeService.saveEmployee(employee);
         return employee;
     }
